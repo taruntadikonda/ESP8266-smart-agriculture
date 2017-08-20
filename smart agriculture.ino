@@ -7,8 +7,8 @@
 #include<dht.h>
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
-const char* ssid = "connected";
-const char* password = "anvesh1998";
+const char* ssid = "********";//your ssid name
+const char* password = "*******";//ssid password
 #define mqtt_server  "mqtt.dioty.co"
 int dht11 = 13;
 //int value;
@@ -119,7 +119,7 @@ void reconnect()
     // Create a random client ID
     String clientId = "ESP8266Client-";
     clientId += String(random(0xffff), HEX);
-     client.connect("clientId","taditarun123@gmail.com","0f63a696");
+     client.connect("clientId","username","password");// user name and password is provided by mqtt broker and repalce the topics with your one.
     // Attempt to connect
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
